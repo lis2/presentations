@@ -1,0 +1,39 @@
+.content > pre {
+    font-size: 200%;
+}
+body {
+  font-family: Avenir;
+  background-color: #fff;
+  color: #58585a;
+}
+h1 {
+  font-family: "Futura";
+  color: #343434;
+
+}
+div.slide {
+  background-color: #fbfbfb;
+}
+code {
+    font-family: Monaco;
+    font-size: 16pt;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+pre {
+    font-size: 20pt;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding-bottom: 10px;
+    padding: 10px 0px  10px 10px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+span { color: #ca4003; }
+
+.first h1 { color: #ca4003 }
+
+.dont-like { font-size: 2px; }
