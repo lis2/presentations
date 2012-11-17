@@ -12,7 +12,7 @@
 * page does not automatically reload
 
 !SLIDE transition=scrollLeft
-# Charackeristics
+# Characteristics
 * All of the <span>client logic</span> in javascript
 * Updates to <span>many parts</span> of the UI on changes to data
 * <span>Templating</span> on the client side
@@ -583,11 +583,11 @@ Coffeescript
 
     class ToDo.Models.Entry extends Backbone.Model
       toggleStatus: () ->
-        if this.get('status') == 'incomplete'
-          this.set({'status': 'complete'})
+        if @get('status') == 'incomplete'
+          @set({'status': 'complete'})
         else
-          this.set({'status': 'incomplete'})
-        this.save()
+          @set({'status': 'incomplete'})
+        @save()
 
 !SLIDE transition=scrollLeft
 #c/entries.js.coffee
@@ -599,16 +599,16 @@ Coffeescript
       url: '/entries'
 
       initialize: () ->
-        @on('remove', this.hideModel, this)
+        @on('remove', @hideModel, this)
 
       hideModel: (model) ->
         model.trigger('hide')
 
       show: (id) ->
-        modelsToRemove = this.filter( (entry) ->
+        modelsToRemove = @filter( (entry) ->
           return entry.id.toString() != id
         );
-        this.remove(modelsToRemove)
+        @remove(modelsToRemove)
 
 !SLIDE transition=scrollLeft
 #entries_routes.js.coffee
