@@ -204,7 +204,7 @@ Coffeescript
     number = 42
 
 !SLIDE transition=scrollLeft
-# Assignment
+# @
     @@@javascript
 
     this.value;
@@ -742,7 +742,7 @@ Coffeescript
 <p><a href="https://github.com/addyosmani/backbone-fundamentals">Backbone fundamentals</a></p>
 
 !SLIDE transition=scrollLeft
-# coffesecript.org
+# coffeescript.org
 ![cf.png](cf.png)
 
 !SLIDE transition=scrollLeft
