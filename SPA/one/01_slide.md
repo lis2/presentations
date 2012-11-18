@@ -469,8 +469,9 @@ Coffeescript
     @@@ruby
 
     class Entry < ActiveRecord::Base
-      attr_accessible :name
+      attr_accessible :name, :status
       validates_presence_of :name
+      validates_presence_of :status
     end
 
 !SLIDE transition=scrollLeft
@@ -501,8 +502,7 @@ Coffeescript
     @@@ruby
 
       def create
-        @entry = Entry.new(name: params[:name])
-        @entry.save
+        @entry = Entry.create(params[:entry])
         respond_with @entry
       end
 
@@ -604,11 +604,13 @@ Coffeescript
       hideModel: (model) ->
         model.trigger('hide')
 
+      showModel: (model) ->
+        model.trigger('show')
+
       show: (id) ->
-        modelsToRemove = @filter( (entry) ->
-          return entry.id.toString() != id
-        );
-        @remove(modelsToRemove)
+        @each(@hideModel)
+        model = @get(id)
+        @showModel(model)
 
 !SLIDE transition=scrollLeft
 #entries_routes.js.coffee
@@ -654,7 +656,10 @@ Coffeescript
 
     createEntry: (event) ->
       event.preventDefault()
-      attributes = name: $('#new_entry_name').val()
+      attributes = 
+        entry:
+          name: $('#new_entry_name').val()
+          status: "incomplete"
       @collection.create attributes,
         wait: true
         success: ->
@@ -681,17 +686,21 @@ Coffeescript
       initialize: () ->
         @model.on('change', @render, this)
         @model.on('destroy hide', @remove, this)
-    
+        @model.on('show', @show, this)    
+
       remove: () ->
         $(@el).fadeOut()
-    
-      render: ->
-        $(@el).html(@template(entry: @model))
-        this
+   
+      show: () ->
+        $(@el).fadeIn() 
 
 !SLIDE transition=scrollLeft
 #v/entry.js.coffee
     @@@ruby   
+
+      render: ->
+        $(@el).html(@template(entry: @model))
+        this
 
       toggleStatus: () ->
         @model.toggleStatus()
