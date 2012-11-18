@@ -7,9 +7,9 @@
 
 !SLIDE transition=scrollLeft
 # What is SPA?
-* all necessary code is <span>retrieved</span> with a single page load
-* <span>more fluid</span> user experience
-* page does not automatically reload
+* All necessary code is <span>retrieved</span> with a single page load
+* <span>More fluid</span> user experience
+* Page does not automatically reload
 
 !SLIDE transition=scrollLeft
 # Characteristics
