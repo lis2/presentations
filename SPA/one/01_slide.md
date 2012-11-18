@@ -430,7 +430,6 @@ Coffeescript
 * need jQuery or Zepto for AJAX
 
 !SLIDE transition=scrollLeft
-#MVC
 * models
 * views
 * <span>collections</span>
@@ -526,6 +525,26 @@ Coffeescript
     <div id="form"></div>
 
     <table id="entries" class="table table-striped"></table>
+
+!SLIDE transition=scrollLeft
+#gem 'backbone-on-rails'
+
+!SLIDE transition=scrollLeft
+#rails generate backbone:install
+    @@@ruby
+
+    //= require underscore
+    //= require backbone
+    //= require to_do
+    //= require_tree ../templates
+    //= require_tree ./models
+    //= require_tree ./collections
+    //= require_tree ./views
+    //= require_tree ./routers
+    //= require_tree ./models
+
+!SLIDE transition=scrollLeft
+#rails generate backbone:scaffold entry
 
 !SLIDE transition=scrollLeft
     @@@ruby
