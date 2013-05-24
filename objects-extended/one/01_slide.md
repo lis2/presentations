@@ -147,6 +147,16 @@
     class MyClass
       my_var # I want access!
     end
+    
+!SLIDE full-page
+# Flattering scope
+        @@@ ruby 
+    $my_var = "Success"
+
+    class MyClass
+      $my_var # I want access!
+    end
+    
 !SLIDE full-page
         @@@ ruby 
     my_var = "Success"
