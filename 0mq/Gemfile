@@ -1,0 +1,6 @@
+source :rubygems
+gem 'bluecloth'
+gem 'nokogiri'
+gem 'gli'
+gem 'heroku'
+gem 'showoff', :git => 'https://github.com/puppetlabs/showoff'
